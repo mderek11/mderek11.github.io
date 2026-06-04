@@ -1,0 +1,469 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Epilogue:wght@300;400;500;600&family=Inconsolata:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#1e2433;--paper:#f4f7fc;--warm:#e0e6f0;--rule:rgba(30,36,51,0.18);--rule-md:rgba(30,36,51,0.32);
+  --muted:#4a5068;--red:#b52a18;--red-dim:rgba(181,42,24,0.14);
+  --gold:#b8900e;--gold-dim:rgba(154,124,58,0.12);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Epilogue',sans-serif;
+  --mono:'Inconsolata',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;overflow-x:hidden;}
+
+/* ── MOBILE FIRST BASE SIZES ── */
+p{font-size:16px;line-height:1.75;}
+li{font-size:16px;line-height:1.7;}
+
+.label{font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.label-red{color:var(--red);font-weight:600;}
+.label::before{content:'';width:20px;height:1px;background:currentColor;flex-shrink:0;}
+.container{max-width:760px;margin:0 auto;padding:0 24px;}
+@media(min-width:600px){.container{padding:0 36px;}}
+hr.rule{border:none;border-top:1px solid var(--rule);margin:0;}
+
+/* MASTHEAD */
+.masthead{background:#1a2133;color:var(--paper);padding:72px 24px 64px;position:relative;overflow:hidden;}
+@media(min-width:600px){.masthead{padding:100px 36px 80px;}}
+.masthead::after{content:'PERFORMANCE';position:absolute;right:-20px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,0.03);white-space:nowrap;pointer-events:none;}
+.masthead-inner{max-width:760px;margin:0 auto;}
+.for-who{font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.for-who::before{content:'';width:20px;height:1px;background:var(--red);}
+.masthead h1{font-family:var(--serif);font-size:clamp(38px,7vw,74px);font-weight:900;line-height:1.04;letter-spacing:-0.01em;margin-bottom:28px;color:var(--paper);}
+.masthead h1 em{font-style:italic;color:var(--red);}
+.masthead-sub{font-size:17px;font-weight:300;color:rgba(236,240,248,0.9);max-width:540px;line-height:1.7;margin-bottom:36px;border-left:2px solid var(--red);padding-left:18px;}
+.proof-bar{display:flex;gap:28px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(232,236,244,0.08);}
+.proof-item{}
+.proof-num{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--paper);line-height:1;margin-bottom:2px;}
+.proof-desc{font-size:13px;font-family:var(--mono);color:rgba(232,236,244,0.75);letter-spacing:0.05em;text-transform:uppercase;}
+
+/* 90 DAY STRIP */
+.day-strip{background:#b52a18;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+@media(min-width:600px){.day-strip{padding:20px 36px;}}
+.day-strip-num{font-family:var(--serif);font-size:48px;font-weight:900;color:white;line-height:1;flex-shrink:0;}
+.day-strip-text{font-size:15px;font-weight:300;color:#ffffff;line-height:1.6;}
+.day-strip-text strong{font-weight:600;color:white;}
+
+/* NOT FOR YOU */
+.nfy{background:var(--warm);border-bottom:2px solid var(--rule-md);padding:28px 24px;}
+@media(min-width:600px){.nfy{padding:32px 36px;}}
+.nfy-inner{max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
+.nfy-head{font-family:var(--serif);font-size:16px;font-weight:700;flex-shrink:0;padding-top:6px;min-width:130px;}
+.nfy-tags{display:flex;gap:8px;flex-wrap:wrap;flex:1;}
+.nfy-tag{background:white;border:2px solid var(--rule-md);border-radius:4px;padding:8px 16px;font-size:13px;font-family:var(--mono);color:var(--ink);font-weight:600;}
+
+/* SECTIONS */
+section{padding:56px 0;}
+@media(min-width:600px){section{padding:72px 0;}}
+h2{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:900;line-height:1.08;margin-bottom:24px;}
+
+/* HOW IT WORKS — two col on desktop */
+.how-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px;}
+@media(min-width:580px){.how-grid{grid-template-columns:1fr 1fr;}}
+.how-card{background:var(--warm);border:2px solid var(--rule-md);border-left:5px solid var(--red);border-radius:8px;padding:24px 26px;}
+.how-num{font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.how-title{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:8px;}
+.how-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.how-items li{font-size:15px;font-weight:300;color:var(--ink);display:flex;gap:8px;line-height:1.6;}
+.how-items li::before{content:'→';color:var(--red);font-family:var(--mono);font-size:11px;flex-shrink:0;padding-top:2px;}
+
+/* CHAIN */
+.chain{background:#1a2133;border-radius:8px;padding:22px;border:2px solid rgba(232,236,244,0.07);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;margin-top:24px;}
+.chain-step{text-align:center;padding:8px 12px;}
+.chain-label{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(232,236,244,0.7);margin-bottom:4px;}
+.chain-val{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--paper);line-height:1.2;}
+.chain-arr{color:var(--red);font-size:18px;padding:0 2px;}
+.chain-final .chain-val{color:var(--red);}
+
+/* WHAT YOU GET */
+.gets-section{background:var(--warm);border-top:2px solid var(--rule-md);border-bottom:2px solid var(--rule-md);padding:56px 24px;}
+@media(min-width:600px){.gets-section{padding:72px 36px;}}
+.gets-inner{max-width:760px;margin:0 auto;}
+.gets-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px;}
+@media(min-width:500px){.gets-grid{grid-template-columns:1fr 1fr;}}
+.get{display:flex;gap:12px;align-items:flex-start;padding:18px 20px;background:var(--paper);border-radius:6px;border:2px solid var(--rule-md);border-left:5px solid var(--red);}
+.get-icon{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);flex-shrink:0;padding-top:3px;min-width:56px;font-weight:500;}
+.get-text{font-size:15px;font-weight:400;line-height:1.55;color:var(--ink);}
+.get-text strong{font-weight:600;}
+
+/* PRICING — stacked cards */
+.price-section{padding:56px 24px;}
+@media(min-width:600px){.price-section{padding:72px 36px;}}
+.price-inner{max-width:760px;margin:0 auto;}
+.price-cards{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
+.price-card{border:1px solid var(--rule-md);border-radius:10px;overflow:hidden;}
+.price-card.mid{border-color:var(--red);border-width:3px;position:relative;box-shadow:0 0 0 1px rgba(181,42,24,0.15);}
+.price-card.top{border-color:var(--gold);border-width:2px;}
+.price-badge{position:absolute;top:0;right:0;background:var(--red);color:white;font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:5px 12px;border-radius:0 10px 0 6px;}
+.price-head{padding:22px 24px;background:var(--warm);border-bottom:2px solid var(--rule-md);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+.price-name{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.1;margin-bottom:4px;}
+.price-persona{font-size:14px;font-weight:300;color:var(--muted);font-style:italic;max-width:380px;line-height:1.55;}
+.price-amt{font-family:var(--serif);font-size:28px;font-weight:900;color:var(--ink);white-space:nowrap;}
+.price-per{font-size:14px;color:var(--muted);font-weight:300;}
+.price-body{padding:16px 22px;}
+.price-bullets{list-style:none;display:grid;grid-template-columns:1fr;gap:4px;}
+@media(min-width:500px){.price-bullets{grid-template-columns:1fr 1fr;}}
+.price-bullets li{display:flex;gap:8px;font-size:15px;font-weight:300;line-height:1.6;padding:6px 0;border-bottom:1px solid var(--rule);}
+.price-bullets li:last-child{border-bottom:none;}
+.tick{color:var(--red);font-size:11px;flex-shrink:0;padding-top:2px;}
+.tick-g{color:var(--gold);font-size:11px;flex-shrink:0;padding-top:2px;}
+
+/* GUARANTEE STRIP */
+.guar-strip{background:#1a2133;padding:40px 24px;}
+@media(min-width:600px){.guar-strip{padding:48px 36px;}}
+.guar-inner{max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;border-left:5px solid var(--gold);padding-left:28px;}
+.guar-icon{font-family:var(--serif);font-size:48px;font-weight:900;color:var(--gold);line-height:1;flex-shrink:0;}
+.guar-text{}
+.guar-title{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--paper);margin-bottom:8px;}
+.guar-desc{font-size:15px;font-weight:300;color:rgba(232,236,244,0.7);line-height:1.7;}
+.guar-desc strong{color:var(--paper);font-weight:500;}
+
+/* IS / IS NOT */
+.is-section{background:var(--warm);padding:40px 24px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+@media(min-width:600px){.is-section{padding:48px 36px;}}
+.is-inner{max-width:760px;margin:0 auto;}
+.is-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+@media(max-width:480px){.is-grid{grid-template-columns:1fr;}}
+.is-card{padding:22px 24px;background:var(--paper);border-radius:8px;border:2px solid var(--rule-md);}
+.is-label{font-family:var(--mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.is-card:first-child .is-label{color:var(--red);font-weight:600;}
+.is-card:first-child{border-left:5px solid var(--red);}
+.is-card:last-child .is-label{color:var(--muted);}
+.is-items{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.is-items li{font-size:15px;font-weight:300;line-height:1.6;display:flex;gap:8px;}
+.is-items li::before{font-size:11px;flex-shrink:0;padding-top:2px;}
+.is-card:first-child .is-items li::before{content:'✓';color:var(--red);}
+.is-card:last-child .is-items li::before{content:'✗';color:var(--muted);}
+
+/* BONUSES */
+.bonus-section{padding:56px 24px;}
+@media(min-width:600px){.bonus-section{padding:72px 36px;}}
+.bonus-inner{max-width:760px;margin:0 auto;}
+.bonus-list{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+.bonus-card{background:var(--warm);border:2px solid var(--rule-md);border-left:5px solid var(--red);border-radius:8px;padding:24px 26px;display:flex;gap:16px;align-items:flex-start;}
+.bonus-n{font-family:var(--serif);font-size:36px;font-weight:900;color:var(--rule-md);line-height:1;flex-shrink:0;}
+.bonus-content{}
+.bonus-obj{font-family:var(--mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.bonus-title{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:4px;}
+.bonus-desc{font-size:15px;font-weight:300;color:var(--muted);line-height:1.65;}
+.bonus-desc strong{color:var(--ink);font-weight:500;}
+.bonus-val{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--red);margin-left:auto;flex-shrink:0;padding-top:4px;}
+
+/* CTA */
+.cta-section{background:#1a2133;padding:72px 24px;}
+@media(min-width:600px){.cta-section{padding:88px 36px;}}
+.cta-inner{max-width:560px;margin:0 auto;text-align:center;}
+.cta-inner h2{font-family:var(--serif);font-size:clamp(32px,6vw,52px);font-weight:900;line-height:1.08;margin-bottom:16px;color:var(--paper);}
+.cta-inner h2 em{font-style:italic;color:var(--red);}
+.cta-sub{font-size:16px;font-weight:300;color:rgba(232,236,244,0.65);line-height:1.7;margin-bottom:28px;}
+.cta-btn{display:inline-block;background:var(--red);color:white;font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:20px 48px;border-radius:4px;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;font-weight:600;box-shadow:0 4px 16px rgba(181,42,24,0.35);}
+.cta-btn:hover{background:#d44030;transform:translateY(-2px);}
+.cta-btn-ghost{display:inline-block;background:transparent;color:rgba(232,236,244,0.85);font-family:var(--mono);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:4px;border:1px solid rgba(232,236,244,0.15);margin-top:12px;cursor:pointer;transition:border-color 0.2s,color 0.2s;}
+.cta-btn-ghost:hover{border-color:rgba(232,236,244,0.6);color:var(--paper);}
+.cta-note{display:block;margin-top:16px;font-size:13px;font-family:var(--mono);color:rgba(232,236,244,0.65);letter-spacing:0.06em;line-height:1.6;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.masthead-inner>*{animation:fadeUp 0.6s ease forwards;opacity:0;}
+.masthead-inner>*:nth-child(1){animation-delay:0.1s;}
+.masthead-inner>*:nth-child(2){animation-delay:0.25s;}
+.masthead-inner>*:nth-child(3){animation-delay:0.4s;}
+.masthead-inner>*:nth-child(4){animation-delay:0.55s;}
+
+</style>
+
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="for-who">For Series A–C SaaS Founders &amp; Executives</div>
+    <h1>Not Just Your Content —<br>Your Performance as a Founder<br>Is Only as Good<br>as <em>You Are.</em></h1>
+    <p class="masthead-sub">I write all of your content. The performance system running underneath it exists to make you a better founder — sharper decisions, clearer leadership, higher-performing team, better company. The content is the most visible proof it's working. Your business feels it first.</p>
+    <div class="proof-bar">
+      <div class="proof-item">
+        <div class="proof-num">20+</div>
+        <div class="proof-desc">Years coaching founders, athletes, and executives to peak output</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">4</div>
+        <div class="proof-desc">Disciplines: S&amp;C, mindset, nutrition, sleep</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">5</div>
+        <div class="proof-desc">Max clients at any time. Always.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 90-DAY STRIP -->
+<div class="day-strip">
+  <div class="day-strip-num">90</div>
+  <div class="day-strip-text"><strong>Days to full benefit. Minimum commitment on all programs.</strong> Content authority compounds. The first 30 days establish your voice. Days 31–60 build momentum. Days 61–90 is where inbound starts. <strong>30-day money-back guarantee if the content doesn't sound like you.</strong></div>
+</div>
+
+<!-- NOT FOR YOU -->
+<div class="nfy">
+  <div class="nfy-inner">
+    <div class="nfy-head">Not for you if…</div>
+    <div class="nfy-tags">
+      <span class="nfy-tag">Pre-product</span>
+      <span class="nfy-tag">Want one viral post</span>
+      <span class="nfy-tag">Post inconsistently by choice</span>
+      <span class="nfy-tag">Not ready for 90 days</span>
+      <span class="nfy-tag">Want a VA to schedule posts</span>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <div class="label label-red">01 — How It Works</div>
+    <h2>Two systems.<br>One outcome.</h2>
+    <p style="font-size:16px;font-weight:300;color:var(--muted);max-width:580px;margin-bottom:8px;">I run two programs simultaneously for every client. One optimizes the founder. One builds their authority. They're the same program.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">Program A — Performance</div>
+        <div class="how-title">Forge the Operator</div>
+        <ul class="how-items">
+          <li>S&amp;C protocol designed to raise BDNF and cut chronic cortisol — the two biological levers that govern strategic clarity</li>
+          <li>Pre-performance routines and identity-outcome separation — so board pressure, fundraise stress, and difficult decisions don't bleed into how you think and communicate</li>
+          <li>Nutrition protocol to eliminate the 2pm energy crash, stabilize blood glucose, and sustain decision-making capacity across a full founder day</li>
+          <li>Sleep architecture that restores prefrontal cortex function — the part of your brain responsible for strategic thinking, nuanced communication, and long-term planning</li>
+          <li>Energy-mapped schedule design — your highest-value decisions, most critical conversations, and deepest strategic thinking happen in the 90-minute window where your biology is running fastest</li>
+          <li>Weekly HRV readiness tracking — know exactly when to schedule your most important decisions, hardest conversations, and highest-stakes meetings — not just content sessions</li>
+        </ul>
+      </div>
+      <div class="how-card">
+        <div class="how-num">Program B — Content</div>
+        <div class="how-title">Build the Authority</div>
+        <ul class="how-items">
+          <li>I write every post — you don't write anything</li>
+          <li>3–5 posts/week on your platform of choice</li>
+          <li>90-day periodization plan tied to your milestones</li>
+          <li>Weekly 30-min performance &amp; content session — we review your performance metrics, adjust protocols, and extract the business insight that becomes your content</li>
+          <li>Monthly Impact Report — follower growth, inbound conversations generated, post reach, and recovery trend in one document that shows exactly what's working and what to double down on</li>
+          <li>Every post written from your real decisions and real perspective — the kind of specificity that makes an investor, enterprise buyer, or senior hire stop scrolling and think "this person actually knows what they're doing"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="chain">
+      <div class="chain-step"><div class="chain-label">Physical system</div><div class="chain-val">Peak operator</div></div>
+      <div class="chain-arr">→</div>
+      <div class="chain-step"><div class="chain-label">Cognitive + emotional</div><div class="chain-val">Sharper thinking</div></div>
+      <div class="chain-arr">→</div>
+      <div class="chain-step"><div class="chain-label">Weekly session</div><div class="chain-val">Rich material</div></div>
+      <div class="chain-arr">→</div>
+      <div class="chain-step"><div class="chain-label">I write it</div><div class="chain-val">Every word</div></div>
+      <div class="chain-arr">→</div>
+      <div class="chain-step chain-final"><div class="chain-label">Result</div><div class="chain-val">Category authority</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<div class="gets-section">
+  <div class="gets-inner">
+    <div class="label label-red">02 — What You Get</div>
+    <h2>Every engagement includes:</h2>
+    <div class="gets-grid">
+      <div class="get"><div class="get-icon">Day 1</div><div class="get-text"><strong>Founder Performance Audit</strong> — a written diagnostic revealing exactly where your physical, cognitive, emotional, and environmental performance is leaking — and the specific protocols to close each gap</div></div>
+      <div class="get"><div class="get-icon">Day 3</div><div class="get-text"><strong>90-Day Content Periodization Plan</strong> — the strategic playbook. Four phases, each with a defined objective, content theme, and business milestone. This answers why every post exists and what it's designed to achieve. Delivered Day 3 before a single word is written.</div></div>
+      <div class="get"><div class="get-icon">Ongoing</div><div class="get-text"><strong>Custom Performance Protocol</strong> — a written S&amp;C, nutrition, sleep, and mindset program built specifically for a founder at your company stage — not a generic wellness plan</div></div>
+      <div class="get"><div class="get-icon">Weekly</div><div class="get-text"><strong>3–5 Ghostwritten Posts</strong> — written entirely by me, in your voice, on your platform</div></div>
+      <div class="get"><div class="get-icon">Weekly</div><div class="get-text"><strong>Weekly Performance &amp; Content Session</strong> — 30 minutes where I pull the most valuable insight from your week, identify the content angle your competitors can't touch, and brief the posts ahead</div></div>
+      <div class="get"><div class="get-icon">Monthly</div><div class="get-text"><strong>Monthly Impact Report</strong> — inbound conversations generated, audience growth, post reach, and recovery trend together — so you can see the direct line between how you're operating and the business conversations your content is opening</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="price-section">
+  <div class="price-inner">
+    <div class="label label-red">03 — Programs</div>
+    <h2>Three programs.<br>All include the full system.</h2>
+    <p style="font-size:16px;font-weight:300;color:var(--muted);margin-bottom:8px;">Every tier includes the full performance system and complete ghostwriting. The difference is depth of access, volume of output, and how far you want to push the authority-building. Most founders who get results are in the middle.</p>
+    <div class="price-cards">
+
+      <!-- TIER 1 -->
+      <div class="price-card">
+        <div class="price-head">
+          <div>
+            <div class="price-name">Performance Content</div>
+            <div class="price-persona">"I want my content handled and my performance optimized — by one person who treats both as the same discipline."</div>
+          </div>
+          <div><div class="price-amt">$3,500</div><div class="price-per">/ month</div></div>
+        </div>
+        <div class="price-body">
+          <ul class="price-bullets">
+            <li><span class="tick">✦</span>Founder Performance Audit</li>
+            <li><span class="tick">✦</span>Custom S&amp;C, mindset, nutrition &amp; sleep protocol</li>
+            <li><span class="tick">✦</span>90-day content periodization plan</li>
+            <li><span class="tick">✦</span>3 posts/week — your platform of choice</li>
+            <li><span class="tick">✦</span>Weekly performance check-in &amp; content briefing</li>
+            <li><span class="tick">✦</span>Monthly performance report</li>
+            <li><span class="tick">✦</span>Notion content workspace — yours to keep</li>
+            <li><span class="tick">✦</span>90-day minimum engagement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TIER 2 — RECOMMENDED -->
+      <div class="price-card mid">
+        <span class="price-badge">Most Popular</span>
+        <div class="price-head">
+          <div>
+            <div class="price-name">Founder Performance Accelerator</div>
+            <div class="price-persona">"How I run my company determines the quality of what gets written about it. I want both optimized."</div>
+          </div>
+          <div><div class="price-amt">$7,500</div><div class="price-per">/ month</div></div>
+        </div>
+        <div class="price-body">
+          <ul class="price-bullets">
+            <li><span class="tick">✦</span>Everything in Performance Content</li>
+            <li><span class="tick">✦</span>4 posts/week — your platform of choice</li>
+            <li><span class="tick">✦</span>Monthly 60-min deep-dive performance call</li>
+            <li><span class="tick">✦</span>Weekly 30-min performance &amp; content call</li>
+            <li><span class="tick">✦</span>Recovery tracking setup — know when to schedule your most important decisions and highest-stakes conversations</li>
+            <li><span class="tick">✦</span>Monthly Board-Ready Brief — one-page strategic narrative summary each month, ready to share with investors or advisors</li>
+            <li><span class="tick">✦</span>Quarterly Performance &amp; Content Reset — a structured 60-min review of every pillar, every content metric, and every business goal. We adjust the protocol, reprioritize content themes, and set the next 90-day performance target</li>
+            <li><span class="tick">✦</span>Priority Slack access — questions answered within 24 hours, same-day for time-sensitive situations around fundraises, press, or major product decisions</li>
+            <li><span class="tick">✦</span>Quarterly Positioning Audit — how your content authority is tracking against your category, with specific adjustments to sharpen your market position</li>
+            <li><span class="tick">✦</span>90-day minimum engagement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="price-card top">
+        <div class="price-head">
+          <div>
+            <div class="price-name">Category Architect</div>
+            <div class="price-persona">"I'm not here to compete in my category. I'm here to define it."</div>
+          </div>
+          <div><div class="price-amt">$10,000</div><div class="price-per">/ month</div></div>
+        </div>
+        <div class="price-body">
+          <ul class="price-bullets">
+            <li><span class="tick-g">✦</span>Everything in the Accelerator</li>
+            <li><span class="tick-g">✦</span>5 posts/week — your platform of choice</li>
+            <li><span class="tick-g">✦</span>Bi-weekly 30-min performance &amp; strategy call</li>
+            <li><span class="tick-g">✦</span>Executive Bench — full performance protocol extended to COO, CMO, or any C-suite leader at $2,500/person/month</li>
+            <li><span class="tick-g">✦</span>12-month category narrative roadmap</li>
+            <li><span class="tick-g">✦</span>Launch Amplification Sprint — when you raise, launch, or make a major hire, I produce a coordinated 2-week content surge: 10 posts across the announcement arc designed to maximize reach, signal momentum, and generate inbound at the exact moment your market is watching</li>
+            <li><span class="tick-g">✦</span>Direct mobile access — call or text</li>
+            <li><span class="tick-g">✦</span>Annual Performance &amp; Strategy Retreat — one full-day off-site session, available upon completion of month 12 of continuous enrollment</li>
+            <li><span class="tick-g">✦</span>Ghost-authored long-form piece each month — one deeply researched, fully written newsletter issue or thought leadership article that establishes you as the definitive voice in your category</li>
+            <li><span class="tick-g">✦</span>High-Stakes Appearance Prep — before every podcast, panel, or keynote, I write your complete briefing document: your core POV, three quotable frameworks, anticipated questions, and the two or three lines that will get clipped and shared</li>
+            <li><span class="tick-g">✦</span>90-day minimum engagement</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FULL OFFER LINK -->
+    <div style="margin-top:24px;padding:20px 22px;background:var(--warm);border:1px solid var(--rule-md);border-radius:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div style="font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:4px;">Want the full breakdown?</div>
+        <div style="font-size:14px;font-weight:300;color:var(--muted);line-height:1.5;">The complete offer includes the performance science behind every protocol, the ROI math by deal size, and the reasoning behind every deliverable — for founders who want to understand exactly what they're buying before they commit.</div>
+      </div>
+      <a href="https://derekcoffey.com/program.html" style="display:inline-block;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:4px;white-space:nowrap;">Read the Full Program →</a>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<div class="guar-strip">
+  <div class="guar-inner">
+    <div class="guar-icon">30</div>
+    <div class="guar-text">
+      <div class="guar-title">Day money-back guarantee.</div>
+      <p class="guar-desc">If after 30 days the content I've written doesn't accurately represent your voice and advance your business narrative — <strong>full refund, one email, no negotiation.</strong> One condition: complete the onboarding audit and call. That's it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- IS / IS NOT -->
+<div class="is-section">
+  <div class="is-inner">
+    <div class="label">What this is and isn't</div>
+    <div class="is-grid">
+      <div class="is-card">
+        <div class="is-label">This IS</div>
+        <ul class="is-items">
+          <li>Full-service ghostwriting — I write everything</li>
+          <li>A performance system that makes you a sharper decision-maker, stronger leader, and higher-performing operator across every function of your company — board meetings, fundraise conversations, hiring decisions, product strategy, and team communication</li>
+          <li>Weekly sessions where we review your performance and I write your content</li>
+          <li>Content that sounds like you — not a template</li>
+          <li>A minimum 90-day engagement for real results</li>
+        </ul>
+      </div>
+      <div class="is-card">
+        <div class="is-label">This is NOT</div>
+        <ul class="is-items">
+          <li>A coaching program where you do the work</li>
+          <li>A content course or template library</li>
+          <li>A VA service that schedules your posts</li>
+          <li>A quick fix — 90 days minimum, non-negotiable</li>
+          <li>For founders who aren't ready to commit to the process</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BONUSES -->
+<div class="bonus-section">
+  <div class="bonus-inner">
+    <div class="label label-red">04 — Move Within 14 Days</div>
+    <h2>Three bonuses.<br>Three objections answered.</h2>
+    <div class="bonus-list">
+      <div class="bonus-card">
+        <div class="bonus-n">01</div>
+        <div class="bonus-content">
+          <div class="bonus-obj">Kills: "It won't sound like me"</div>
+          <div class="bonus-title">The Founder Voice Intensive</div>
+          <p class="bonus-desc">90-minute voice intensive before I write a single word — I map your origin story, identify your 5 strongest content angles, and ensure every post sounds unmistakably like you. <strong>Most ghostwriters skip this. Yours won't sound like everyone else's.</strong></p>
+        </div>
+        <div class="bonus-val">$750</div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-n">02</div>
+        <div class="bonus-content">
+          <div class="bonus-obj">Kills: "My profile is too weak"</div>
+          <div class="bonus-title">The Profile Rebuild</div>
+          <p class="bonus-desc">Complete rewrite of your profile on whichever platform you use — headline, about section, experience framing. <strong>The content I write is only as powerful as the profile people land on.</strong></p>
+        </div>
+        <div class="bonus-val">$600</div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-n">03</div>
+        <div class="bonus-content">
+          <div class="bonus-obj">Kills: "I don't know what to post or when"</div>
+          <div class="bonus-title">The 90-Day Post-by-Post Calendar</div>
+          <p class="bonus-desc">Built directly from your periodization plan — every post for your first 90 days scheduled by date, with topic, format, and objective pre-decided. <strong>The periodization plan is the strategic playbook. The post-by-post calendar is the game schedule.</strong> One answers what to achieve. The other answers what goes live and when. Together they eliminate the blank page before your engagement begins.</p>
+        </div>
+        <div class="bonus-val">$500</div>
+      </div>
+    </div>
+    <p style="margin-top:24px;text-align:center;font-family:var(--mono);font-size:15px;color:var(--ink);letter-spacing:0.06em;font-weight:600;padding:14px 20px;background:var(--warm);border:2px solid var(--rule-md);border-radius:6px;">Total bonus value: $1,850 — included for founders who begin within 14 days of their discovery call.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to<br><em>Actually</em><br>Perform?</h2>
+    <p class="cta-sub">Start with a 20-minute Founder Performance Diagnostic. You'll leave knowing your single biggest performance leak, the specific protocol to close it, and exactly what your content presence should look like on your platform — written as a concrete recommendation, not a vague suggestion. Whether we work together or not.</p>
+    <a href="https://calendly.com/derekcoffey/diagnostic" target="_blank" class="cta-btn">Book Your Diagnostic Call</a>
+    <br>
+    <a href="https://derekcoffey.com/program.html" class="cta-btn-ghost">Read the Full Program →</a>
+    <span class="cta-note">20 minutes. No pitch deck. No pressure. Serious founders only.<br>Founding client pricing available for the first 5 engagements — reduced rate in exchange for a documented 90-day case study. You get premium execution at pilot economics. I get the proof of concept.</span>
+  </div>
+</div>
+
