@@ -33,7 +33,7 @@
 :root{
   --ink:#1e2433;--paper:#f4f7fc;--warm:#e0e6f0;--rule:rgba(30,36,51,0.18);--rule-md:rgba(30,36,51,0.32);
   --muted:#4a5068;--red:#b52a18;--red-dim:rgba(181,42,24,0.12);--red-mid:rgba(181,42,24,0.15);
-  --gold:#b8900e;--gold-dim:rgba(154,124,58,0.12);
+  --gold:#1e2433;--gold-dim:rgba(30,36,51,0.08);
   --serif:'Playfair Display',Georgia,serif;--sans:'Epilogue',sans-serif;--mono:'Inconsolata',monospace;
 }
 html{scroll-behavior:smooth;}
@@ -152,7 +152,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 /* GUARANTEE */
 .guarantee-section{background:var(--warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 36px;}
 .guarantee-inner{max-width:800px;margin:0 auto;}
-.guarantee-card{background:var(--paper);border:2.5px solid var(--gold);border-radius:10px;padding:44px 48px;position:relative;margin-top:32px;box-shadow:0 4px 24px rgba(184,144,14,0.12);}
+.guarantee-card{background:var(--paper);border:2.5px solid var(--gold);border-radius:10px;padding:44px 48px;position:relative;margin-top:32px;box-shadow:0 4px 24px rgba(30,36,51,0.12);}
 @media(max-width:580px){.guarantee-card{padding:28px 24px;}}
 .g-stamp{position:absolute;top:-14px;left:40px;background:var(--gold);color:white;font-family:var(--mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;}
 .g-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,36px);font-weight:700;margin-bottom:20px;line-height:1.15;}
@@ -226,6 +226,24 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 .masthead-inner>*:nth-child(4){animation-delay:0.55s;}
 .masthead-inner>*:nth-child(5){animation-delay:0.7s;}
 
+
+/* TL;DR + JUMP NAV */
+.jump-nav{position:sticky;top:0;z-index:50;background:#141926;border-bottom:1px solid rgba(232,236,244,0.12);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+.jump-nav-inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;gap:4px;}
+@media(min-width:600px){.jump-nav-inner{padding:0 36px;}}
+.jump-nav a{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(232,236,244,0.85);text-decoration:none;padding:14px 12px;display:inline-block;}
+.jump-nav a:hover{color:#fff;}
+.jump-nav a.jump-cta{color:#fff;background:var(--red);margin:8px 0 8px auto;padding:6px 14px;border-radius:4px;font-weight:600;}
+#system,#math,#programs,#guarantee,#bonuses,#book{scroll-margin-top:56px;}
+.tldr{background:var(--paper);padding:40px 24px 8px;}
+@media(min-width:600px){.tldr{padding:48px 36px 8px;}}
+.tldr-inner{max-width:760px;margin:0 auto;background:var(--warm);border:2px solid var(--rule-md);border-left:5px solid var(--red);border-radius:8px;padding:26px 28px;}
+.tldr-head{font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:14px;}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.tldr li{font-size:16px;line-height:1.55;display:flex;gap:10px;}
+.tldr li::before{content:'\2192';color:var(--red);font-family:var(--mono);flex-shrink:0;}
+.tldr li strong{font-weight:600;}
+.roi-note{font-family:var(--mono);font-size:13px;color:rgba(232,236,244,0.75);margin-top:14px;line-height:1.6;letter-spacing:0.02em;}
 </style>
 
 
@@ -237,7 +255,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
     <div class="mechanism">
       <p>Most ghostwriters optimize your words. <strong>I optimize the Founder producing them.</strong> I write every word of your content — but the performance system running underneath the content exists for one reason that has nothing to do with content. <strong>A founder operating at peak makes better decisions, leads with more clarity, builds a higher-performing team, and runs every component of their business at a measurably higher level.</strong> That is what you are buying. The content is the most visible proof it is working — the signal your market sees. But the results your company feels happen inside the business first: in the board meeting, the hiring decision, the strategic pivot, the fundraise conversation. Content reflects a high-performing founder. It does not create one. My job is both.</p>
     </div>
-    <p style="font-size:13px;font-weight:300;color:rgba(232,236,244,0.5);margin-bottom:24px;font-style:italic;">2 Founding Client slots accepted at pilot pricing — $3,500/mo, full 90 days, Accelerator-tier deliverables — in exchange for documented results.:</p>
+    <p style="font-size:13px;font-weight:300;color:rgba(232,236,244,0.5);margin-bottom:24px;font-style:italic;">2 Founding Client slots accepted at pilot pricing — $3,500/mo, full 90 days, Accelerator-tier deliverables — in exchange for documented results.</p>
     <div class="proof-bar">
       <div class="proof-item">
         <div class="proof-num">20+</div>
@@ -247,13 +265,35 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
         <div class="proof-num">4</div>
         <div class="proof-desc">Disciplines: S&amp;C, mindset, nutrition, sleep</div>
       </div>
-      <div class="proof-item">
-        <div class="proof-num">4</div>
-        <div class="proof-desc">Max clients at any time. Always.</div>
-      </div>
     </div>
   </div>
 </div>
+
+<!-- TL;DR -->
+<div class="tldr">
+  <div class="tldr-inner">
+    <div class="tldr-head">The short version</div>
+    <ul>
+      <li><span><strong>What it is:</strong> I write every post (3 to 5 a week) and build the performance system that makes you a sharper founder.</span></li>
+      <li><span><strong>How it starts:</strong> Day 1 audit, Day 3 ninety-day plan, then a weekly session and posts in your voice.</span></li>
+      <li><span><strong>Price:</strong> $3,500, $7,500, or $10,000 a month. 90-day minimum.</span></li>
+      <li><span><strong>Risk:</strong> 30-day guarantee. If the content doesn't sound like you, you get your first month back.</span></li>
+      <li><span><strong>Next step:</strong> a 20-minute Founder Performance Diagnostic. No pitch deck.</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- JUMP NAV -->
+<nav class="jump-nav" aria-label="Page sections">
+  <div class="jump-nav-inner">
+    <a href="#system">The System</a>
+    <a href="#math">The Math</a>
+    <a href="#programs">Programs</a>
+    <a href="#guarantee">Guarantee</a>
+    <a href="#bonuses">Bonuses</a>
+    <a class="jump-cta" href="#book">Book a Call</a>
+  </div>
+</nav>
 
 <!-- NOT FOR YOU -->
 <div class="not-for-you">
@@ -275,7 +315,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
     <div class="commitment-num">90</div>
     <div class="commitment-text">
       <div class="commitment-title">Days to full benefit. Not a suggestion — a structural reality.</div>
-      <p class="commitment-desc">Content authority compounds. Performance protocols take time to calibrate. <strong>The first 30 days establish your voice and your baseline.</strong> Days 31–60 are where the system builds momentum — your performance protocols begin producing measurably sharper thinking, faster decision-making, and steadier leadership under pressure. Your company starts running better. Your content starts reflecting it. <strong>Days 61–90 are where the compounding kicks in — inbound conversations start appearing, your audience recognizes you as a category voice, and the performance work has produced the kind of structural clarity that makes everything in your company easier: hiring, fundraising, product decisions, team communication. Enrollment is a minimum 90-day commitment. That's not a contract term. It's the honest timeline for results worth having. <strong>If after 30 days the content doesn't sound like you, you get your first month back — full stop. The 90-day minimum only applies if you're satisfied.</strong></p>
+      <p class="commitment-desc">Content authority compounds. Performance protocols take time to calibrate. <strong>The first 30 days establish your voice and your baseline.</strong> Days 31–60 are where the system builds momentum — your performance protocols are built to sharpen your thinking, speed up decisions, and steady your leadership under pressure. Your content starts reflecting it. <strong>Days 61–90 are where compounding is meant to kick in — inbound conversations can start appearing, your audience starts to recognize your voice, and the performance work makes decisions easier across hiring, fundraising, product, and team communication. Enrollment is a minimum 90-day commitment. That's not a contract term. It's the honest timeline for results worth having.</strong> <strong>If after 30 days the content doesn't sound like you, you get your first month back — full stop. The 90-day minimum only applies if you're satisfied.</strong></p>
     </div>
   </div>
 </div>
@@ -283,11 +323,11 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 <hr class="rule-thick">
 
 <!-- PROMISE -->
-<div class="promise-section">
+<div class="promise-section" id="system">
   <div class="container">
     <div class="label label-red">01 — The Promise</div>
     <h2 class="promise-statement">
-      In 90 days, you will have a <em>high-performance content system</em> generating 2–5 inbound conversations per month from your ideal buyers, the investors you want to know, and the senior talent you're trying to attract — on your platform of choice.
+      In 90 days, you will have a <em>high-performance content system</em> built to open conversations with your ideal buyers, the investors you want to know, and the senior talent you're trying to attract — on your platform of choice.
     </h2>
 
     <!-- FULL PERFORMANCE MATRIX -->
@@ -303,7 +343,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
           <div class="matrix-pillar-components">
             <div class="matrix-component">
               <div class="matrix-component-label">S &amp; C</div>
-              <div class="matrix-component-text">Progressive resistance training raises BDNF, reduces chronic cortisol, and builds the physical resilience that sustains high performance through fundraising cycles, product launches, and sustained operational pressure.</div>
+              <div class="matrix-component-text">Progressive resistance training builds the strength, energy, and physical resilience that sustain high performance through fundraising cycles, product launches, and sustained operational pressure.</div>
             </div>
             <div class="matrix-component">
               <div class="matrix-component-label">Mindset</div>
@@ -311,7 +351,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
             </div>
             <div class="matrix-component">
               <div class="matrix-component-label">Nutrition</div>
-              <div class="matrix-component-text">Protein-anchored eating, time-restricted windows, and strategic supplementation stabilize blood glucose, eliminate the 2pm cognitive crash, and sustain the energy curve required to run a company at full capacity across a twelve-hour founder day — not just the first four hours of it.</div>
+              <div class="matrix-component-text">Protein-anchored eating, time-restricted windows, and strategic supplementation help stabilize blood glucose, reduce the 2pm cognitive crash, and sustain the energy curve required to run a company at full capacity across a twelve-hour founder day — not just the first four hours of it.</div>
             </div>
             <div class="matrix-component">
               <div class="matrix-component-label">Sleep</div>
@@ -324,21 +364,21 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
         <div class="matrix-pillar">
           <div class="matrix-pillar-name">Pillar 2 — Cognitive</div>
           <div class="matrix-pillar-title">Deep Work &amp; Information Architecture</div>
-          <div class="matrix-pillar-items">The average founder context-switches every three to four minutes. Real strategic thinking — the kind that produces decisions worth writing about and perspectives worth sharing — requires 90-minute uninterrupted blocks. Deep work scheduling, information diet protocols, and flow state design don't just improve your thinking. They raise the quality of every decision, judgment call, and strategic conversation you have as a founder — and make the ideas you bring to our content sessions impossible for anyone else to replicate.<br><br>What you consume determines how clearly you think. And how clearly you think determines the quality of every decision, communication, and judgment call you make as a founder.</div>
+          <div class="matrix-pillar-items">Researcher Gloria Mark, author of <em>Attention Span</em>, has measured the average time on a screen before switching at about 47 seconds. Real strategic thinking — the kind that produces decisions worth writing about and perspectives worth sharing — needs long, uninterrupted blocks. Deep work scheduling, information diet protocols, and flow state design don't just improve your thinking. They raise the quality of every decision, judgment call, and strategic conversation you have as a founder — and make the ideas you bring to our content sessions impossible for anyone else to replicate.<br><br>What you consume determines how clearly you think. And how clearly you think determines the quality of every decision, communication, and judgment call you make as a founder.</div>
         </div>
 
         <!-- PILLAR 3: EMOTIONAL -->
         <div class="matrix-pillar">
           <div class="matrix-pillar-name">Pillar 3 — Emotional</div>
           <div class="matrix-pillar-title">Nervous System Regulation &amp; Leadership Presence</div>
-          <div class="matrix-pillar-items">Chronic sympathetic dominance — the state most founders and executives and SaaS executives operate in daily — collapses creative range, narrows communication style, and makes it nearly impossible to articulate a compelling vision with the confidence and nuance that attracts investors, talent, and customers.<br><br>Stress regulation protocols and nervous system work restore the emotional bandwidth that authentic leadership requires. When you're regulated and clear, you lead with conviction, communicate with precision, and make decisions from a position of strategic strength. When you're reactive and depleted, you manage instead of lead — and everyone in your organization feels it. The performance work closes that gap. The content reflects the result.</div>
+          <div class="matrix-pillar-items">Chronic stress — a state many founders and executives operate in for long stretches — narrows creative range and communication style and makes it harder to articulate a compelling vision with the confidence and nuance that attracts investors, talent, and customers.<br><br>Stress regulation protocols and nervous system work restore the emotional bandwidth that authentic leadership requires. When you're regulated and clear, you lead with conviction, communicate with precision, and make decisions from a position of strategic strength. When you're reactive and depleted, you manage instead of lead — and everyone in your organization feels it. The performance work closes that gap. The content reflects the result.</div>
         </div>
 
         <!-- PILLAR 4: ENVIRONMENTAL -->
         <div class="matrix-pillar">
           <div class="matrix-pillar-name">Pillar 4 — Environmental</div>
           <div class="matrix-pillar-title">Schedule Architecture &amp; Energy Design</div>
-          <div class="matrix-pillar-items">Willpower is finite. Every low-value decision you make is a withdrawal from the cognitive account that produces your best leadership. Schedule architecture — energy-mapped task blocks, decision fatigue elimination, friction removal, and deliberate ritual design — ensures that your highest cognitive capacity is spent on the decisions that define your company, not consumed by the noise that surrounds it.<br><br>The founders who get the most from this program aren't necessarily the most naturally gifted. They're the ones who have built the structural conditions for consistent peak output — and who operate their companies at a level that compounds over time.</div>
+          <div class="matrix-pillar-items">Your attention and energy are limited. Every low-value decision you make spends some of what produces your best leadership. Schedule architecture — energy-mapped task blocks, decision fatigue elimination, friction removal, and deliberate ritual design — ensures that your highest cognitive capacity is spent on the decisions that define your company, not consumed by the noise that surrounds it.<br><br>The founders who get the most from this program aren't necessarily the most naturally gifted. They're the ones who have built the structural conditions for consistent peak output — and who operate their companies at a level that compounds over time.</div>
         </div>
 
       </div>
@@ -410,15 +450,15 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 <hr class="rule">
 
 <!-- ROI MATH -->
-<div class="roi-section">
+<div class="roi-section" id="math">
   <div class="roi-inner">
     <div class="label">02 — The Math</div>
     <h2>Why This Costs<br>What It Costs.</h2>
     <table class="roi-table">
       <thead>
         <tr>
-          <th style="width:50%">What one inbound conversation is worth</th>
-          <th>What you generate with a consistent, strategic presence</th>
+          <th style="width:50%">What one inbound conversation could be worth</th>
+          <th>Illustrative scenario</th>
           <th>ARR value</th>
         </tr>
       </thead>
@@ -445,14 +485,15 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
         </tr>
       </tbody>
     </table>
+    <p class="roi-note">Illustrative math, not a promise. Deal sizes, inbound volume, and timing vary by company, market, and consistency.</p>
     <div class="roi-verdict">
-      <strong>This program costs $3,500–$10,000/month.</strong> One inbound mid-market deal per quarter — generated by content I write on your behalf — covers 3–8x the annual investment inside a single contract. At this stage, the cost of being invisible to your market isn't a content budget line. It's a revenue line. The question isn't whether you can afford this. It's whether you can afford to keep generating zero inbound while founders in your category build authority you'll never catch up to.
+      <strong>This program costs $3,500–$10,000/month</strong> ($42,000–$120,000 a year). A single mid-market contract at $80K–$250K ARR can cover a full year of the program, depending on the deal and the tier. At this stage, being invisible to your market isn't a content budget problem. It's a revenue problem.
     </div>
   </div>
 </div>
 
 <!-- TIERS -->
-<div class="tiers-section">
+<div class="tiers-section" id="programs">
   <div class="container">
     <div class="label label-red">03 — Choose Your Program</div>
     <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;margin-bottom:8px;">Three Programs.<br>One System.</h2>
@@ -532,18 +573,20 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
   </div>
 </div>
 
+</div>
+
 <hr class="rule">
 
 <!-- GUARANTEE -->
-<div class="guarantee-section">
+<div class="guarantee-section" id="guarantee">
   <div class="guarantee-inner">
     <div class="label">04 — The Guarantee</div>
-    <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;">Your Risk<br>Is Zero.</h2>
+    <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;">Your First Month<br>Is Covered.</h2>
     <div class="guarantee-card">
       <span class="g-stamp">30-Day Performance Guarantee</span>
-      <div class="g-title">If the content doesn't sound like you — exactly like you — you don't pay. Full stop.</div>
+      <div class="g-title">If the content doesn't sound like you, you get your first month back. Full stop.</div>
       <p class="g-text">
-        If after 30 days the content I've written doesn't accurately represent your voice, advance your business narrative, and demonstrate a clear strategic system — <strong>I will refund your first month in full. One email. No negotiation. No invoice dispute. Money back within 5 business days.</strong>
+        If after 30 days the content I've written doesn't accurately represent your voice, <strong>I will refund your first month in full. One email. No negotiation. No invoice dispute. Money back within 5 business days.</strong>
         <br><br>
         I can offer this because I only take on founders I'm genuinely confident I can move the needle for. <strong>The guarantee isn't generous — it's honest. If I don't believe I can deliver for you, I won't take your money in the first place.</strong> My intake process is designed to prevent that situation, not paper over it.
       </p>
@@ -567,7 +610,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 <hr class="rule">
 
 <!-- BONUSES -->
-<div class="bonuses-section">
+<div class="bonuses-section" id="bonuses">
   <div class="container">
     <div class="label label-red">05 — Bonuses for Founders Who Move Within 14 Days</div>
     <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;margin-bottom:8px;">Every Objection,<br>Answered in Advance.</h2>
@@ -579,11 +622,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
         <div>
           <div class="bonus-objection">Kills: "The content won't sound like me"</div>
           <div class="bonus-title">The Founder Voice Intensive</div>
-          <p class="bonus-desc">A dedicated 90-minute session before I write a single post. I extract your authentic voice, map your origin story into a 12-month content narrative, and identify your 5 strongest content angles. <strong>Most ghostwriters skip this entirely and hope the writing sounds right.</strong> It never does. Yours will.</p>
-        </div>
-        <div class="bonus-val">
-          <div class="val-label">Value</div>
-          <div class="val-num">$750</div>
+          <p class="bonus-desc">A dedicated 90-minute session before I write a single post. I extract your authentic voice, map your origin story into a 12-month content narrative, and identify your 5 strongest content angles. <strong>Most ghostwriters skip this entirely and hope the writing sounds right.</strong> It rarely does. Yours will.</p>
         </div>
       </div>
 
@@ -594,10 +633,6 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
           <div class="bonus-title">The Profile Rebuild</div>
           <p class="bonus-desc">A complete rewrite of your profile — on whichever platform you use — headline, about section, and experience framing positioned to convert visitors into inbound conversations. <strong>The content I write is only as powerful as the profile people land on.</strong> Most founders have a resume. You'll leave with a sales asset.</p>
         </div>
-        <div class="bonus-val">
-          <div class="val-label">Value</div>
-          <div class="val-num">$600</div>
-        </div>
       </div>
 
       <div class="bonus">
@@ -607,68 +642,15 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
           <div class="bonus-title">The 90-Day Post-by-Post Calendar</div>
           <p class="bonus-desc">Built directly from your periodization plan, this is the tactical execution layer — every post for your first 90 days scheduled by date, with the specific topic, format, angle, and business objective pre-decided. <strong>The periodization plan is the strategic playbook: what to achieve and why, phase by phase. The post-by-post calendar is the game schedule: what goes live, on which day, mapped to your exact business timeline.</strong> One eliminates strategic ambiguity. The other eliminates execution paralysis. Together they mean you arrive at day one with nothing left to figure out.</p>
         </div>
-        <div class="bonus-val">
-          <div class="val-label">Value</div>
-          <div class="val-num">$500</div>
-        </div>
       </div>
 
     </div>
-    <p class="bonus-total">Total bonus value: $1,850 — included at no cost for founders who begin within 14 days of their discovery call.</p>
-  </div>
-</div>
-
-<!-- SCARCITY -->
-<div class="scarcity-section">
-  <div class="scarcity-inner">
-    <div class="label">06 — The Real Cost of Waiting</div>
-    <h2>Why Delay<br>Is a Decision.</h2>
-    <div class="why-four">
-      <p><strong>I work with a maximum of 4 clients. Here's the math behind that number — not a marketing tactic:</strong></p>
-      <div class="math">
-        <div class="math-item">
-          <div class="math-num">3–4 hrs</div>
-          <div class="math-label">Direct attention per client/week</div>
-        </div>
-        <div class="math-item">
-          <div class="math-num">4 clients</div>
-          <div class="math-label">= 15–20 hrs client work/week</div>
-        </div>
-        <div class="math-item">
-          <div class="math-num">you +4 clients</div>
-          <div class="math-label">= one of them gets a worse product</div>
-        </div>
-      </div>
-    </div>
-    <div class="cost-timeline">
-      <div class="cost-item">
-        <div class="cost-when">In 30 days</div>
-        <div class="cost-title">Invisible to Your Market</div>
-        <p class="cost-desc">Right now, a founder in your exact category is being recommended to the investor you want to meet, because they posted something sharp last week and their name came up. You weren't in that conversation. You could be.</p>
-      </div>
-      <div class="cost-item">
-        <div class="cost-when">In 90 days</div>
-        <div class="cost-title">A Quantifiable Pipeline Gap</div>
-        <p class="cost-desc">At Series A–C, one inbound enterprise deal is worth $80K–$500K ARR. Founders with an active, strategic content presence generate 2–4 inbound enterprise conversations per quarter from content alone. Every quarter you delay is a quarter of that pipeline you'll never recover.</p>
-      </div>
-      <div class="cost-item">
-        <div class="cost-when">In 6 months</div>
-        <div class="cost-title">The Compounding Deficit</div>
-        <p class="cost-desc">Content authority is not a linear asset — it compounds. A founder who starts today and posts consistently for 6 months doesn't have 6 months of authority. They have an audience, a search presence, a recognizable voice, and warm inbound that didn't exist before. That isn't catchable. It's structural.</p>
-      </div>
-      <div class="cost-item">
-        <div class="cost-when">Ongoing</div>
-        <div class="cost-title">The Performance Tax</div>
-        <p class="cost-desc">Every week you operate under-recovered, cognitively overloaded, and structurally reactive is a week your decisions are slower, your judgment is cloudier, your team communication is less precise, and your leadership is running below what it could be. Multiplied over 12 months across every function of your business — hiring, product, fundraising, sales, culture — that's not a wellness issue. It's a compounding competitive disadvantage with a very real dollar figure attached.</p>
-      </div>
-    </div>
-    </div>
-    </div>
+    <p class="bonus-total">Included at no cost for founders who begin within 14 days of their discovery call.</p>
   </div>
 </div>
 
 <!-- CTA -->
-<div class="cta-section">
+<div class="cta-section" id="book">
   <div class="cta-inner">
     <h2>Ready to<br><em>Actually</em><br>Perform?</h2>
     <p class="cta-sub">Start with a 20-minute Founder Performance Diagnostic. You'll leave with a clear picture of your biggest performance gaps and exactly what content I would write on your behalf — whether we work together or not.</p>
