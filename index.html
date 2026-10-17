@@ -97,6 +97,20 @@ h2{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:900;line-
 .prog-price small{display:block;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--muted);margin-top:4px;}
 .prog-foot{margin-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:15px;color:var(--muted);}
 
+/* START HERE (entry sprint) */
+.start{background:#141926;border:3px solid var(--red);border-radius:8px;padding:28px 24px 22px;margin-top:32px;position:relative;}
+.start-top{display:grid;grid-template-columns:1fr;gap:12px;}
+@media(min-width:600px){.start-top{grid-template-columns:1fr auto;gap:24px;align-items:start;}}
+.start-name{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.15;color:var(--paper);margin-bottom:6px;}
+.start-desc{font-size:15px;font-weight:300;color:rgba(232,236,244,0.9);line-height:1.6;}
+.start-price{font-family:var(--serif);font-size:30px;font-weight:900;color:var(--paper);white-space:nowrap;line-height:1;}
+.start-price small{display:block;font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(232,236,244,0.78);margin-top:4px;}
+.start-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(232,236,244,0.14);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:14px;line-height:1.55;color:rgba(232,236,244,0.88);}
+.start-foot strong{color:var(--paper);font-weight:600;}
+.start-foot .text-link{color:var(--paper);border-bottom-color:var(--red-bright);}
+.start-or{font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:30px;}
+.start-or + .prog-list{margin-top:14px;}
+
 /* GUARANTEE */
 .guar-strip{background:#141926;padding:40px 24px;}
 @media(min-width:600px){.guar-strip{padding:48px 36px;}}
@@ -152,7 +166,7 @@ h2{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:900;line-
 
 <!-- NOT FOR YOU -->
 <div class="nfy">
-  <div class="nfy-inner"><strong>Not for you if</strong> you're pre-product, want one viral post, or won't commit to 90 days.</div>
+  <div class="nfy-inner"><strong>Not for you if</strong> you're pre-product, want one viral post, or won't commit to 90 days once you've seen the work.</div>
 </div>
 
 <!-- HOW IT WORKS -->
@@ -187,6 +201,21 @@ h2{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:900;line-
     <div class="container">
       <div class="label label-red">Programs</div>
       <h2>Three levels.<br>One system.</h2>
+      <div class="start">
+        <span class="prog-badge">Start here</span>
+        <div class="start-top">
+          <div>
+            <div class="start-name">Founder Performance Sprint</div>
+            <div class="start-desc">Not ready for 90 days? Get the performance audit, a voice session, and 8 posts in your voice. See the work first, then decide.</div>
+          </div>
+          <div class="start-price">$1,250<small>/ 3 weeks</small></div>
+        </div>
+        <div class="start-foot">
+          <span><strong>Fully credited</strong> toward your first month if you enroll within 14 days. Two Sprints a month.</span>
+          <a class="text-link" href="https://calendly.com/mderekcoffey/diagnostic?primary_color=b52a18" target="_blank" rel="noopener">Book the call →</a>
+        </div>
+      </div>
+      <p class="start-or">Or go straight to a program</p>
       <div class="prog-list">
         <div class="prog">
           <div>

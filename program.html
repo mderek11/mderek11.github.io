@@ -149,6 +149,26 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
 .tick{color:var(--red);font-size:11px;padding-top:3px;flex-shrink:0;font-weight:500;}
 .tick-gold{color:var(--gold);font-size:11px;padding-top:3px;flex-shrink:0;font-weight:500;}
 
+/* START HERE (entry sprint) */
+.start-here{position:relative;margin:36px 0 8px;background:#1a2133;border:3px solid var(--red);border-radius:10px;padding:34px 28px 28px;color:var(--paper);}
+.start-badge{position:absolute;top:-13px;left:24px;background:var(--red);color:white;font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 14px;border-radius:100px;}
+.start-grid{display:grid;grid-template-columns:1fr 250px;gap:28px;align-items:start;}
+@media(max-width:700px){.start-grid{grid-template-columns:1fr;}}
+.start-persona{font-family:var(--mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,236,244,0.75);margin-bottom:8px;}
+.start-name{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1.1;margin-bottom:8px;color:var(--paper);}
+.start-for{font-size:15px;font-weight:300;font-style:italic;color:rgba(232,236,244,0.88);margin-bottom:14px;line-height:1.6;}
+.start-items{list-style:none;display:flex;flex-direction:column;}
+.start-items li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(232,236,244,0.12);font-size:15px;line-height:1.55;font-weight:300;color:rgba(232,236,244,0.92);}
+.start-items li:last-child{border-bottom:none;}
+.start-items .tick{color:#f04630;}
+.start-side{background:rgba(255,255,255,0.06);border:1.5px solid rgba(232,236,244,0.16);border-radius:8px;padding:20px 20px 22px;}
+.start-price{font-family:var(--serif);font-size:36px;font-weight:900;line-height:1;color:var(--paper);}
+.start-price-per{font-family:var(--mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(232,236,244,0.78);margin:6px 0 14px;}
+.start-note{font-size:14px;font-weight:300;line-height:1.6;color:rgba(232,236,244,0.9);margin-bottom:8px;}
+.start-note strong{color:var(--paper);font-weight:500;}
+.start-cta{display:inline-block;margin-top:10px;background:var(--red);color:white;font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:600;}
+.start-or{font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:30px;}
+
 /* GUARANTEE */
 .guarantee-section{background:var(--warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:80px 36px;}
 .guarantee-inner{max-width:800px;margin:0 auto;}
@@ -277,6 +297,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
       <li><span><strong>What it is:</strong> I write every post (3 to 5 a week) and build the performance system that makes you a sharper founder.</span></li>
       <li><span><strong>How it starts:</strong> Day 1 audit, Day 3 ninety-day plan, then a weekly session and posts in your voice.</span></li>
       <li><span><strong>Price:</strong> $3,500, $7,500, or $10,000 a month. 90-day minimum.</span></li>
+      <li><span><strong>Not ready for 90 days?</strong> Start with the 3-week Founder Performance Sprint: $1,250, credited toward your first month if you enroll.</span></li>
       <li><span><strong>Risk:</strong> 30-day guarantee. If the content doesn't sound like you, you get your first month back.</span></li>
       <li><span><strong>Next step:</strong> a 20-minute Founder Performance Diagnostic. No pitch deck.</span></li>
     </ul>
@@ -304,7 +325,7 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
       <span class="nfy-tag">You want one viral post</span>
       <span class="nfy-tag">You post inconsistently by choice</span>
       <span class="nfy-tag">You want someone to just "do the posts"</span>
-      <span class="nfy-tag">You're not willing to commit to 90 days</span>
+      <span class="nfy-tag">You won't commit to 90 days once you've seen the work</span>
     </div>
   </div>
 </div>
@@ -498,6 +519,33 @@ hr.rule-thick{border:none;border-top:1px solid var(--rule-md);margin:0;}
     <div class="label label-red">03 — Choose Your Program</div>
     <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;margin-bottom:8px;">Three Programs.<br>One System.</h2>
     <p style="font-size:15px;font-weight:300;color:var(--muted);margin-bottom:4px;">Every tier includes full ghostwriting and the complete four-pillar performance system. The difference is how deeply we build your authority, how much direct access you have, and how far we push the offensive. Most founders who get measurable results are in the middle tier.</p>
+
+    <!-- START HERE: ENTRY SPRINT -->
+    <div class="start-here">
+      <span class="start-badge">Start here</span>
+      <div class="start-grid">
+        <div>
+          <div class="start-persona">Entry point · Not a program</div>
+          <div class="start-name">Founder Performance Sprint</div>
+          <p class="start-for">"I want to see the work before I commit to 90 days."</p>
+          <ul class="start-items">
+            <li><span class="tick">+</span><span>Founder Performance Audit — the written diagnostic of where your physical, cognitive, emotional, and environmental performance is leaking</span></li>
+            <li><span class="tick">+</span><span>60-minute voice session — I pull out how you actually talk and your strongest content angles</span></li>
+            <li><span class="tick">+</span><span>8 posts written in your voice, ready for you to review and publish</span></li>
+            <li><span class="tick">+</span><span>A one-page 90-day recommendation: where the content goes next and which program fits</span></li>
+          </ul>
+        </div>
+        <div class="start-side">
+          <div class="start-price">$1,250</div>
+          <div class="start-price-per">One time · 3 weeks</div>
+          <p class="start-note"><strong>Fully credited</strong> toward your first month of any program if you enroll within 14 days of delivery.</p>
+          <p class="start-note">Limited to two Sprints a month.</p>
+          <a href="https://calendly.com/mderekcoffey/diagnostic?primary_color=b52a18" target="_blank" rel="noopener" class="start-cta">Book the call</a>
+        </div>
+      </div>
+    </div>
+    <p class="start-or">Or go straight to a program</p>
+
     <div class="tier-grid">
 
       <!-- TIER 1 -->
